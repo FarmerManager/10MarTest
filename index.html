@@ -4,12 +4,14 @@
         function check(form) {
             if(form.userid.value == "id" & form.pswrd.value == "123") {
             	window.location.replace("https://www.google.com")
+            } else if(form.userid.value == "" & form.pswrd.value == "")  {
+                alert ("Please fill in both Login ID and Password") 
 			} else if (form.userid.value == "") {
                 alert ("blank username")
             } else if(form.pswrd.value == "") {
                 alert ("blank password")
             } else if (form.userid.value != "id" & form.pswrd.value != "123") {
-            	alert ("WRONG LOGIN ID/PSW")    
+            	alert ("Wrong Login ID/Password. Please try again. ")    
            	}
                
         }
@@ -19,7 +21,7 @@
 <body>
 <h1>Login </h1>
 <form name="login">
-    Username<input type="text" name="userid"/>
+    Login ID<input type="text" name="userid"/>
     Password<input type="password" name="pswrd"/>
     <input type="button" onclick="check(this.form)" value="Login"/>
     <input type="reset" value="reset"/>
